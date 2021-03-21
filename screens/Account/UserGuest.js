@@ -13,7 +13,7 @@ export default function UserGuest() {
         style={styles.image}
       />
       <Text style={styles.title}>
-        Consulta tu perfil en restaurantes, bitch!
+        Consulta tu perfil en restaurantes!
       </Text>
       <Text style={styles.description}>
         ¿Cómo describirías tu mejor restaurante? Busca y visualiza los mejores

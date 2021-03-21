@@ -1,43 +1,45 @@
 import React from 'react'
 import { ActivityIndicator } from 'react-native'
 import { StyleSheet, Text, View } from 'react-native'
-import { Overlay } from 'react-native-elements/dist/overlay/Overlay'
+import { Overlay } from 'react-native-elements'
 
-export default function Loading({isVisible, text}) {
+export default function Loading({ isVisible, text }) {
     return (
-        <Overlay 
-            visible={isVisible}
-            windowBackgroundColor="rgba(0,0,0,0.5)"
+        <Overlay
+            isVisible={isVisible}
+            windowBackgoundColor="rgba(0,0,0,0.5)"
             overlayBackgroundColor="transparent"
-            overlayStyle={styles.Overlay}>
-                <View style={styles.view}>
-                    <ActivityIndicator
+            overlayStyle={styles.overlay}
+        >
+            <View style={styles.view}>
+                <ActivityIndicator
                     size="large"
-                    color="#442484" />
-                    {
-                        text && <Text style={styles.text}>{text}</Text> 
-                    } 
-                </View>
-            </Overlay>
+                    color="#442484"
+                />
+                {
+                    text && <Text style={styles.text}>{text}</Text>
+                }
+            </View>
+        </Overlay>
     )
 }
 
 const styles = StyleSheet.create({
-    view: {
-        flex:1,
-        alignItems:"center",
-        justifyContent:"center"
-    },
-    overlay: {
+    overlay : {
         height: 100,
         width: 200,
-        backgroundColor: "#FFF",
+        backgroundColor: "#fff",
         borderColor: "#442484",
         borderWidth: 2,
-        borderRadius: 10 
+        borderRadius: 10
+    },
+    view: {
+       flex: 1,
+       alignItems: "center",
+       justifyContent: "center" 
     },
     text: {
-        color:"#442484",
-        marginTop:10
+        color: "#442484",
+        marginTop: 10
     }
 })
